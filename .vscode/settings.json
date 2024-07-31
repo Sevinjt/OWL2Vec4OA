@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./owl2vec_star/lib"
+    ]
+}

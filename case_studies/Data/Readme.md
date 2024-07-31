@@ -1,0 +1,3 @@
+## Case Studies must contain bellow mentioned data 
+
+Data and codes for class membership prediction on [NCIT](https://zenodo.org/records/8193375), [DOID](https://zenodo.org/records/8193375), [SNOMED](https://zenodo.org/records/8193375), [NEOPLAS](https://zenodo.org/records/8193375), [PHARMA](https://zenodo.org/records/8193375), [OMIM](https://zenodo.org/records/8193375), [ORDO](https://zenodo.org/records/8193375) ontologies and their corresponding mappings are under the folder `case_studies/Data`
