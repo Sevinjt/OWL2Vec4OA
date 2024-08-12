@@ -1,13 +1,8 @@
 # OWL2Vec4OA
 
+OWL2Vec4OA by Sevinj Teymurova
 
-OWL2Vec4OA Extended version 2023 by Sevinj Teymurova
-
-
-[![pypi](https://img.shields.io/pypi/v/owl2vec-star.svg)](https://pypi.python.org/pypi/owl2vec-star)
-
-
-## **OWL2Vec4OA: Embeddings of aligned network of OWL ontologies**
+## **OWL2Vec4OA: Tailoring Knowledge Graph Embeddings for Ontology Alignment**
 
 
 ### Features
@@ -81,12 +76,10 @@ Code under:
 (version 0.0.1, last access: 07/2024) with revision.
 
 
-### Credits
-
-## Publications
-
+### Publications
 ------------
 
+- Sevinj Teymurova, Ernesto Jimenez-Ruiz, Tillman Weyde, Jiaoyan Chen. OWL2Vec4OA: Tailoring Knowledge Graph Embeddings for Ontology Alignment. Submitted to a conference: [PDF long version]() [PDF short version](). 
 
 - Jiaoyan Chen, Pan Hu, Ernesto Jimenez-Ruiz, Ole Magnus Holter, Denvar Antonyrajah, and Ian Horrocks. **OWL2Vec*: Embedding of OWL ontologies**. Machine Learning, Springer, 2021. [PDF](https://arxiv.org/abs/2009.14654) [Springer](https://rdcu.be/cmIMh) [Collection](https://link.springer.com/journal/10994/topicalCollection/AC_f13088dda1f43d317c5acbfdf9439a31) [Codes in package](https://github.com/KRR-Oxford/OWL2Vec-Star/releases/tag/OWL2Vec-Star-ML-2021-Journal) or [folder](https://github.com/KRR-Oxford/OWL2Vec-Star/tree/master/case_studies)
 
@@ -100,4 +93,4 @@ Data and codes for class membership prediction on [NCIT](https://zenodo.org/reco
 ### Results 
 ------
 
-You can find the computed embeddings in [zenodo](https://zenodo.org) repository 
+You can find the computed embeddings in our [zenodo](https://doi.org/10.5281/zenodo.13217802) repository 
