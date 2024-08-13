@@ -79,7 +79,7 @@ Code under:
 ### Publications
 ------------
 
-- Sevinj Teymurova, Ernesto Jimenez-Ruiz, Tillman Weyde, Jiaoyan Chen. OWL2Vec4OA: Tailoring Knowledge Graph Embeddings for Ontology Alignment. Submitted to a conference: [PDF long version]() [PDF short version](). 
+- Sevinj Teymurova, Ernesto Jimenez-Ruiz, Tillman Weyde, Jiaoyan Chen. OWL2Vec4OA: Tailoring Knowledge Graph Embeddings for Ontology Alignment. Submitted to a conference: [arXiv](http://arxiv.org/abs/2408.06310). 
 
 - Jiaoyan Chen, Pan Hu, Ernesto Jimenez-Ruiz, Ole Magnus Holter, Denvar Antonyrajah, and Ian Horrocks. **OWL2Vec*: Embedding of OWL ontologies**. Machine Learning, Springer, 2021. [PDF](https://arxiv.org/abs/2009.14654) [Springer](https://rdcu.be/cmIMh) [Collection](https://link.springer.com/journal/10994/topicalCollection/AC_f13088dda1f43d317c5acbfdf9439a31) [Codes in package](https://github.com/KRR-Oxford/OWL2Vec-Star/releases/tag/OWL2Vec-Star-ML-2021-Journal) or [folder](https://github.com/KRR-Oxford/OWL2Vec-Star/tree/master/case_studies)
 
@@ -87,7 +87,7 @@ Code under:
 
 ### Case Studies
 ------------
-Data and codes for class membership prediction on [NCIT](https://zenodo.org/records/8193375), [DOID](https://zenodo.org/records/8193375), [SNOMED](https://zenodo.org/records/8193375), [NEOPLAS](https://zenodo.org/records/8193375), [PHARMA](https://zenodo.org/records/8193375), [OMIM](https://zenodo.org/records/8193375), [ORDO](https://zenodo.org/records/8193375) ontologies and their corresponding mappings are under the folder `case_studies/Data`.
+Experiments conducted on the OAEI's [Bio-ML track](https://doi.org/10.5281/zenodo.8193375) The ontologies [NCIT](https://zenodo.org/records/8193375), [DOID](https://zenodo.org/records/8193375), [SNOMED](https://zenodo.org/records/8193375), [NEOPLAS](https://zenodo.org/records/8193375), [PHARMA](https://zenodo.org/records/8193375), [OMIM](https://zenodo.org/records/8193375), [ORDO](https://zenodo.org/records/8193375) and their corresponding mappings are under the folder `case_studies/Data`.
 
 
 ### Results 
