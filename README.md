@@ -1,13 +1,8 @@
 # OWL2Vec4OA
 
+OWL2Vec4OA by Sevinj Teymurova
 
-OWL2Vec4OA Extended version 2023 by Sevinj Teymurova
-
-
-[![pypi](https://img.shields.io/pypi/v/owl2vec-star.svg)](https://pypi.python.org/pypi/owl2vec-star)
-
-
-## **OWL2Vec4OA: Embeddings of aligned network of OWL ontologies**
+## **OWL2Vec4OA: Tailoring Knowledge Graph Embeddings for Ontology Alignment**
 
 
 ### Features
@@ -81,12 +76,10 @@ Code under:
 (version 0.0.1, last access: 07/2024) with revision.
 
 
-### Credits
-
-## Publications
-
+### Publications
 ------------
 
+- Sevinj Teymurova, Ernesto Jimenez-Ruiz, Tillman Weyde, Jiaoyan Chen. OWL2Vec4OA: Tailoring Knowledge Graph Embeddings for Ontology Alignment. Submitted to a conference: [arXiv](http://arxiv.org/abs/2408.06310). 
 
 - Jiaoyan Chen, Pan Hu, Ernesto Jimenez-Ruiz, Ole Magnus Holter, Denvar Antonyrajah, and Ian Horrocks. **OWL2Vec*: Embedding of OWL ontologies**. Machine Learning, Springer, 2021. [PDF](https://arxiv.org/abs/2009.14654) [Springer](https://rdcu.be/cmIMh) [Collection](https://link.springer.com/journal/10994/topicalCollection/AC_f13088dda1f43d317c5acbfdf9439a31) [Codes in package](https://github.com/KRR-Oxford/OWL2Vec-Star/releases/tag/OWL2Vec-Star-ML-2021-Journal) or [folder](https://github.com/KRR-Oxford/OWL2Vec-Star/tree/master/case_studies)
 
@@ -94,10 +87,10 @@ Code under:
 
 ### Case Studies
 ------------
-Data and codes for class membership prediction on [NCIT](https://zenodo.org/records/8193375), [DOID](https://zenodo.org/records/8193375), [SNOMED](https://zenodo.org/records/8193375), [NEOPLAS](https://zenodo.org/records/8193375), [PHARMA](https://zenodo.org/records/8193375), [OMIM](https://zenodo.org/records/8193375), [ORDO](https://zenodo.org/records/8193375) ontologies and their corresponding mappings are under the folder `case_studies/Data`.
+Experiments conducted on the OAEI's [Bio-ML track](https://doi.org/10.5281/zenodo.8193375).
 
 
 ### Results 
 ------
 
-You can find the computed embeddings in [zenodo](https://zenodo.org) repository 
+You can find the computed embeddings in our [zenodo](https://zenodo.org/doi/10.5281/zenodo.13217801) repository 
