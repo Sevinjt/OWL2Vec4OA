@@ -87,7 +87,7 @@ Code under:
 
 ### Case Studies
 ------------
-Experiments conducted on the OAEI's [Bio-ML track](https://doi.org/10.5281/zenodo.8193375) The ontologies [NCIT](https://zenodo.org/records/8193375), [DOID](https://zenodo.org/records/8193375), [SNOMED](https://zenodo.org/records/8193375), [NEOPLAS](https://zenodo.org/records/8193375), [PHARMA](https://zenodo.org/records/8193375), [OMIM](https://zenodo.org/records/8193375), [ORDO](https://zenodo.org/records/8193375) and their corresponding mappings are under the folder `case_studies/Data`.
+Experiments conducted on the OAEI's [Bio-ML track](https://doi.org/10.5281/zenodo.8193375).
 
 
 ### Results 
