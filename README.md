@@ -93,4 +93,4 @@ Data and codes for class membership prediction on [NCIT](https://zenodo.org/reco
 ### Results 
 ------
 
-You can find the computed embeddings in our [zenodo](https://doi.org/10.5281/zenodo.13217802) repository 
+You can find the computed embeddings in our [zenodo](https://zenodo.org/doi/10.5281/zenodo.13217801) repository 
