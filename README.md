@@ -79,7 +79,8 @@ Code under:
 ### Publications
 ------------
 
-- Sevinj Teymurova, Ernesto Jimenez-Ruiz, Tillman Weyde, Jiaoyan Chen. OWL2Vec4OA: Tailoring Knowledge Graph Embeddings for Ontology Alignment. Submitted to a conference: [arXiv](http://arxiv.org/abs/2408.06310). 
+- Sevinj Teymurova, Ernesto Jimenez-Ruiz, Tillman Weyde, Jiaoyan Chen. **OWL2Vec4OA: Tailoring Knowledge Graph Embeddings for Ontology Alignment**. In 6th Knowledge Graph and Semantic Web Conference (long paper) & 19th Ontology Matching Workshop (poster paper). ([PDF](https://arxiv.org/abs/2408.06310)) ([Slides](https://drive.google.com/file/d/1HhRqY2R1w0bz-svgTKCXEP7vYZySDVK8/view?usp=sharing)) ([GitHub](https://github.com/Sevinjt/OWL2Vec4OA))
+
 
 - Jiaoyan Chen, Pan Hu, Ernesto Jimenez-Ruiz, Ole Magnus Holter, Denvar Antonyrajah, and Ian Horrocks. **OWL2Vec*: Embedding of OWL ontologies**. Machine Learning, Springer, 2021. [PDF](https://arxiv.org/abs/2009.14654) [Springer](https://rdcu.be/cmIMh) [Collection](https://link.springer.com/journal/10994/topicalCollection/AC_f13088dda1f43d317c5acbfdf9439a31) [Codes in package](https://github.com/KRR-Oxford/OWL2Vec-Star/releases/tag/OWL2Vec-Star-ML-2021-Journal) or [folder](https://github.com/KRR-Oxford/OWL2Vec-Star/tree/master/case_studies)
 
