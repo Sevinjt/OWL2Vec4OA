@@ -5,6 +5,7 @@ import numpy as np
 import rdflib
 from rdflib import URIRef, Literal, BNode
 import time
+import os
 
 from owl2vec_star.rdf2vec.embed import RDF2VecTransformer
 from owl2vec_star.rdf2vec.graph import KnowledgeGraph, Vertex
@@ -17,24 +18,25 @@ import configparser
 from rdflib.namespace import RDF, RDFS
 from rdflib import Graph, RDF, RDFS
 
-config = configparser.ConfigParser()
-config.read('default1.cfg')
 
-ontology_file1 = config['BASIC']['ontology_file1']
-ontology_file2 = config['BASIC']['ontology_file2']
-mapping_file = config['BASIC']['mapping']
-confidence_threshold = config['BASIC']['confidence_threshold']
-
-def construct_kg_walker(graph1, graph2, mapping_file, walker_type, walk_depth):
+def construct_kg_walker(ontology_file, mapping_file, walker_type, walk_depth, config):
     global classes 
     global class_onto1
     global class_onto2
 
+    mapping_file = config['BASIC']['mapping']
+    confidence_threshold = config['BASIC']['confidence_threshold']
+    
     class_onto1 = set()
     class_onto2 = set()
-
+    g = rdflib.Graph()
+    if ontology_file.endswith('ttl') or ontology_file.endswith('TTL'):
+        g.parse(ontology_file, format='turtle')
+    else:
+        g.parse(ontology_file)
+    
     kg = KnowledgeGraph()
-    for (s, p, o) in graph1:
+    for (s, p, o) in g:
         s_v, o_v = Vertex(str(s)), Vertex(str(o))
         p_v = Vertex(str(p), predicate=True, _from=s_v, _to=o_v)
         kg.add_vertex(s_v)
@@ -42,19 +44,16 @@ def construct_kg_walker(graph1, graph2, mapping_file, walker_type, walk_depth):
         kg.add_vertex(o_v)
         kg.add_edge(s_v, p_v, 1.0)
         kg.add_edge(p_v, o_v, 1.0)
-        class_onto1.add(str(s))
-        class_onto1.add(str(o))
+
+    with open(config['DOCUMENT']['pre_entity_file1'], 'r+', encoding="latin-1") as f:
+        for i in f.readlines():
+          class_onto1.add(str(i.strip('\n').strip()))
+
+    with open(config['DOCUMENT']['pre_entity_file2'], 'r+', encoding="latin-1") as f:
+        for i in f.readlines():
+          class_onto2.add(str(i.strip('\n').strip()))
         
-    for (a, b, c) in graph2:
-        s_v, o_v = Vertex(str(a)), Vertex(str(c))
-        p_v = Vertex(str(b), predicate=True, _from=s_v, _to=o_v)
-        kg.add_vertex(s_v)
-        kg.add_vertex(p_v)
-        kg.add_vertex(o_v)
-        kg.add_edge(s_v, p_v, 1.0)
-        kg.add_edge(p_v, o_v, 1.0)
-        class_onto2.add(str(a))
-        class_onto2.add(str(c))
+    
 
     seed_entities=set()
     if mapping_file.split('.')[-1]=='txt':
@@ -179,13 +178,13 @@ def construct_kg_walker(graph1, graph2, mapping_file, walker_type, walk_depth):
     return kg, walker, classes
 
 
-def get_rdf2vec_embed(graph1, graph2, mapping_file, walker_type, walk_depth, embed_size, classes):
+def get_rdf2vec_embed(ontology_file, mapping_file, walker_type, walk_depth, embed_size, classes, config):
     
-    kg, walker, classes = construct_kg_walker(graph1=graph1,
-                                            graph2=graph2,
+    kg, walker, classes = construct_kg_walker(ontology_file = ontology_file,
                                             mapping_file=mapping_file,
                                             walker_type=walker_type,
-                                            walk_depth=walk_depth)
+                                            walk_depth=walk_depth, 
+                                            config=config)
     
     if isinstance(walker, Mapping4Vec):
         transformer = RDF2VecTransformer(walkers=[walker], vector_size=embed_size)
@@ -198,12 +197,12 @@ def get_rdf2vec_embed(graph1, graph2, mapping_file, walker_type, walk_depth, emb
 
 
 
-def get_rdf2vec_walks(graph1, graph2, mapping_file, walker_type, walk_depth, classes):
-    kg, walker, classes = construct_kg_walker(graph1=graph1,
-                                            graph2=graph2,
+def get_rdf2vec_walks(ontology_file, mapping_file, walker_type, walk_depth, classes, config):
+    kg, walker, classes = construct_kg_walker(ontology_file = ontology_file,
                                             mapping_file=mapping_file,
                                             walker_type=walker_type,
-                                            walk_depth=walk_depth)
+                                            walk_depth=walk_depth, 
+                                            config=config)
     
     #kg.visualise()
     instances = [rdflib.URIRef(c) for c in classes]
