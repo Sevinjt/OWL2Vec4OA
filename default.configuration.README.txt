@@ -12,8 +12,6 @@ Example dataset. You need the following example ontologies:
 snomed.body.owl
 fma.body.owl
 
-These will be aligned using external systems LogMap and AML before use.
-
 3. Align Ontologies:
 Use LogMap and AML to align the two ontologies above. These are external systems and must be run before using OWL2Vec4OA.
 
@@ -41,7 +39,7 @@ This will produce a final union or intersection mapping file, e.g.:
 Trainval_U_sn2fm.tsv (is a union version)
 
 6. Organize Files
-Place the following into the right directory: ./case_studies/Data/
+Place the following data into the right directory: ./case_studies/Data/
 
 snomed.body.owl
 fma.body.owl
@@ -51,7 +49,7 @@ Also place:
 Trainval_U_sn2fm.tsv
 test.cands.tsv
 
-Into the working directory ./case_studies/Data/ 
+Into the same directory ./case_studies/Data/ 
 
 7. Check default1.cfg Configuration
 Ensure the following:
@@ -62,10 +60,10 @@ This folder must exist before you run anything. It stores all generated files. C
 ontology_file = ./caches_sn2fm/projection.ttl
 This file will be created automatically after running the notebook.
 
-8. Configure default1.cfg for First Run
-Please ensure these exact settings:
+8. Configure default1.cfg for the First Run
+Ensure these exact settings:
 
-ontology_projection = no (Line 25)
+ontology_projection = no
 
 Comment out these lines:
 
@@ -78,10 +76,10 @@ Comment out these lines:
 Other settings:
 Set the walker and reasoner
 
-walker = mapping4vec (Line 61)
-walk_depth = 2 (Line 62)
-seed_entities_on_mapping = yes (Line 4)
-axiom_reasoner = hermit (Line 42)
+walker = mapping4vec 
+walk_depth = 2 
+seed_entities_on_mapping = yes 
+axiom_reasoner = hermit
 
 9. Run the Notebook
 Launch and run:
