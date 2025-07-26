@@ -1,0 +1,140 @@
+STEP-BY-STEP INSTRUCTIONS
+
+FIRST-RUN:
+
+This setup is required if you are running OWL2Vec4OA for the first time, using default1.cfg.
+
+1. Clone the repository to ensure you're working from a clean and updated copy.
+
+2. Prepare the Data:
+Example dataset. You need the following example ontologies:
+
+snomed.body.owl
+fma.body.owl
+
+These will be aligned using external systems LogMap and AML before use.
+
+3. Align Ontologies:
+Use LogMap and AML to align the two ontologies above. These are external systems and must be run before using OWL2Vec4OA.
+
+LogMap will generate mappings like overestimation, anchors, etc.
+AML will generate its own alignment file.
+
+4. Get Training and Evaluation Files
+From the OAEI::Bio-ML Track download the corresponding files :
+
+train.tsv
+val.tsv
+test.cands.tsv  
+
+5. Create Mapping File
+You now need to unify the alignments: logmap_generated_mapping + aml_mapping + train.tsv + val.tsv:
+
+Union version:
+Use https://github.com/Sevinjt/OWL2Vec4OA/blob/master/LogmapUnionAml.py
+
+Alternative - Intersection version :
+Use https://github.com/Sevinjt/OWL2Vec4OA/blob/master/LogmapIntersectionAml.py
+
+This will produce a final union or intersection mapping file, e.g.:
+
+Trainval_U_sn2fm.tsv (is a union version)
+
+6. Organize Files
+Place the following into the right directory: ./case_studies/Data/
+
+snomed.body.owl
+fma.body.owl
+
+Also place:
+
+Trainval_U_sn2fm.tsv
+test.cands.tsv
+
+Into the working directory ./case_studies/Data/ 
+
+7. Check default1.cfg Configuration
+Ensure the following:
+
+cache_dir = ./caches_sn2fm/
+This folder must exist before you run anything. It stores all generated files. Create this folder manually!
+
+ontology_file = ./caches_sn2fm/projection.ttl
+This file will be created automatically after running the notebook.
+
+8. Configure default1.cfg for First Run
+Please ensure these exact settings:
+
+ontology_projection = no (Line 25)
+
+Comment out these lines:
+
+#pre_entity_file = ./caches_sn2fm/entities.txt
+#pre_entity_file1 = ./caches_sn2fm/entities_onto1.txt
+#pre_entity_file2 = ./caches_sn2fm/entities_onto2.txt
+#pre_annotation_file = ./caches_sn2fm/annotations.txt
+#pre_axiom_file = ./caches_sn2fm/axioms.txt
+
+Other settings:
+Set the walker and reasoner
+
+walker = mapping4vec (Line 61)
+walk_depth = 2 (Line 62)
+seed_entities_on_mapping = yes (Line 4)
+axiom_reasoner = hermit (Line 42)
+
+9. Run the Notebook
+Launch and run:
+
+https://github.com/Sevinjt/OWL2Vec4OA/blob/master/jupyter_notebook_owl2vec4oa.ipynb
+
+10. Expected Outputs after the first run
+After a successful run, you should find the following in your ./caches_sn2fm/ folder:
+
+annotations.txt
+axioms.txt
+entities.txt
+entities_onto1.txt
+entities_onto2.txt
+new_axioms_2.txt
+ontology_2.embeddings
+ontology_2.embeddings.txt
+projection.ttl
+
+And in the main folder, you will get:
+
+scored.test.tsv
+distance.test.tsv
+You can now use these files for downstream evaluation (e.g., with DeepOnto).
+
+
+___________________________________________________________________________________________________________________
+
+
+SECOND RUN - USING EXISTING FILES
+
+Once the first run is complete, you do not need to regenerate all files again if you simply want 
+to change parameters such as:
+
+walk_depth = 3
+seed_entities_on_mapping = no
+walker = another_walker
+etc.
+
+Do This for a Second Run:
+Set:
+
+ontology_projection = yes
+
+Uncomment the following lines in default1.cfg:
+
+pre_entity_file = ./caches_sn2fm/entities.txt
+pre_entity_file1 = ./caches_sn2fm/entities_onto1.txt
+pre_entity_file2 = ./caches_sn2fm/entities_onto2.txt
+pre_annotation_file = ./caches_sn2fm/annotations.txt
+pre_axiom_file = ./caches_sn2fm/axioms.txt
+This tells the system to reuse the previously generated ontology and intermediate files, skipping the heavy reasoning and projection steps.
+
+Change any other parameters you want (e.g., walk_depth = 3,or 4, or 5;  seed_entities_on_mapping = no, etc.).
+
+Run the notebook again - new embeddings and outputs will be generated based on the new config, without recomputing axioms or projections. 
