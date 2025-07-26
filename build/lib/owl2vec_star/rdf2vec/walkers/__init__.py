@@ -1,8 +1,8 @@
 """isort:skip_file"""
 
-from .sevinj import SevinjWalker
+from .mapping4vec import Mapping4Vec
 
 
 __all__ = [
-    "SevinjWalker",
+    "Mapping4Vec",
 ]
