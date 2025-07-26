@@ -38,7 +38,7 @@ This will produce a final union or intersection mapping file, e.g.:
 
 Trainval_U_sn2fm.tsv (is a union version)
 
-6. Organize Files
+6. Organise Files
 Place the following data into the right directory: ./case_studies/Data/
 
 snomed.body.owl
